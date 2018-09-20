@@ -1,4 +1,4 @@
-package ejercicio1;
+package PracticasPropuestas;
 
 import javax.swing.JFrame;
 
