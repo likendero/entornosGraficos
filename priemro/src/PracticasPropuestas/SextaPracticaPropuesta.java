@@ -1,5 +1,8 @@
 package PracticasPropuestas;
-
+/*
+ * licencias windows
+ * JT3JH-X9N93-8Y4JR-W4XDK-G7F8D
+ */
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
