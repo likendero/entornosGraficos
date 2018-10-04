@@ -36,6 +36,7 @@ class V extends JFrame{
 class P extends JPanel{
 	private JButton btnSaludo,btnDespedida;
 	
+	
 	public P() {
 		super();
 		btnSaludo = new JButton("saludo");
