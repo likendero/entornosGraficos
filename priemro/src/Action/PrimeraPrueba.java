@@ -117,9 +117,11 @@ class panel1 extends JPanel implements ActionListener {
 		// accion con alt
 		botonAzul.setMnemonic(KeyEvent.VK_M);
 		
-		//InputMap map = getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
-		
-		
+		InputMap map = getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
+		KeyStroke teclaAmarilla = KeyStroke.getKeyStroke("cntl b");
+		map.put(teclaAmarilla, "fondoAmarillo");
+		ActionMap ac = getActionMap();
+		//ac.put(teclaAmarilla, "fondoAmarillo");
 		// annadir
 		add(botonAzul);
 		add(botonRojo);
