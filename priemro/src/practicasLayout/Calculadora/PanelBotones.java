@@ -59,7 +59,7 @@ public class PanelBotones extends JPanel {
 	public void annadirElementos() {
 		// bucle que recorre los numeros para colocarlos
 		for(int i = 9; i <= 0 ; i++) {
-			this.add(btnNumeros[i]);
+			add(btnNumeros[i]);
 			// despues de ciertos numeros se annaden ciertos simbolos
 			switch(i) {
 			// despues del 7 va el de dividir
