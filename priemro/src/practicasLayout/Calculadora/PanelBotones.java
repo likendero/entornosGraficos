@@ -18,7 +18,7 @@ public class PanelBotones extends JPanel {
 	 */
 	public PanelBotones () {
 		super();
-		
+		init();
 	}
 	/**
 	 * metodo que incializa los componentes del panel
@@ -49,7 +49,7 @@ public class PanelBotones extends JPanel {
 		GridLayout grid = new GridLayout(4, 4);
 		this.setLayout(grid);
 		// annadir elementos
-		
+		annadirElementos();
 		
 	}
 	/**
@@ -57,11 +57,45 @@ public class PanelBotones extends JPanel {
 	 * al panel
 	 */
 	public void annadirElementos() {
-		for(int i = 0; i < btnNumeros.length ; i++) {
-			
-			
+		// bucle que recorre los numeros para colocarlos
+		for(int i = 9; i <= 0 ; i++) {
+			this.add(btnNumeros[i]);
+			// despues de ciertos numeros se annaden ciertos simbolos
+			switch(i) {
+			// despues del 7 va el de dividir
+			case 7:
+				add(btnOperaciones[0]);
+				break;
+			// despues del 4 va el de multiplicar
+			case 4:
+				add(btnOperaciones[1]);
+				break;
+			// despues del 1 va el menos
+			case 1:
+				add(btnOperaciones[2]);
+				break;
+			}
 		}
-		
+		// depues de rellenar todos los numeros se annaden los
+		// simbolos que faltan
+		add(btnOperaciones[3]);
+		add(btnOperaciones[4]);
+		add(btnOperaciones[5]);
+	}
+	/**
+	 * metodo que devuelve un array con los botones
+	 * @return
+	 */
+	public JButton getBtnNumero(int indice) {
+		return btnNumeros[indice];
+	}
+	/**
+	 * debuelve uno de los signos
+	 * @param indice
+	 * @return
+	 */
+	public JButton getBtnSigno(int indice) {
+		return btnOperaciones[indice];
 	}
 }
 
