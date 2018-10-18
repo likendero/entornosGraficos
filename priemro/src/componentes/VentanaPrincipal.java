@@ -2,6 +2,8 @@ package componentes;
 
 import java.awt.Checkbox;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
@@ -9,6 +11,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JSeparator;
@@ -21,7 +24,7 @@ import javax.swing.event.ChangeListener;
  * @author Javier Gonzalez Rives
  *
  */
-public class VentanaPrincipal extends JFrame{
+public class VentanaPrincipal extends JFrame implements ActionListener{
 	private JPanel panelContenedor;
 	private JLabel lbTitulo,etiquetalb,lbBotton,lbTongleButton/*,lbCheckBox*/;
 	private JButton btBoton;
@@ -67,6 +70,7 @@ public class VentanaPrincipal extends JFrame{
 		// definicion boton
 		btBoton = new JButton("boton");
 		btBoton.setBounds(80, 80, 80, 23);
+		btBoton.addActionListener(this);
 		// creacion de chb1
 		chb1 = new JCheckBox("check1");
 		chb1.setBounds(100, 110, 80, 23);
@@ -124,5 +128,44 @@ public class VentanaPrincipal extends JFrame{
 		panelContenedor.add(sHorz);
 		panelContenedor.add(sl1);
 		this.add(panelContenedor);
+	}
+	/**
+	 * mrtodo que comprueba que datos estan seleccionados
+	 */
+	public String formatOutput() {
+		String cadena = new String();
+		// comprobacion que el check esta seleccionado
+		if(chb1.isSelected()) {
+			cadena += "check1\n";
+		}
+		// check2
+		if(chb2.isSelected()) {
+			cadena +="check2\n";
+		}
+		// radios
+		// radio1
+		if(rd1.isSelected()) {
+			cadena += "radio1\n";
+		}
+		// radio2
+		if(rd2.isSelected()) {
+			cadena += "radio2\n";
+		}
+		// toggle
+		if(tbtBoton.isSelected()) {
+			cadena += "toggleButton\n";
+		}
+		return cadena;
+		
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// si se pulsa el boton
+		if(e.getSource() == btBoton) {
+			String salida = formatOutput();
+			salida += (String)cb1.getSelectedItem() + "\n";
+			salida += sl1.getValue() + "\n";
+			JOptionPane.showMessageDialog(this, salida, "info componentes", JOptionPane.INFORMATION_MESSAGE);
+		}
 	}
 }
