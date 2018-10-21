@@ -1,6 +1,7 @@
 package practicasLayout.Calculadora;
 
 import java.awt.BorderLayout;
+import java.awt.FlowLayout;
 import java.awt.Font;
 
 import javax.swing.JLabel;
@@ -26,8 +27,8 @@ public class PanelSuperior extends JPanel {
 	 */
 	private void init() {
 		// cambio del layout
-		BorderLayout border = new BorderLayout();
-		this.setLayout(border);
+		FlowLayout flow = new FlowLayout(FlowLayout.CENTER);
+		this.setLayout(flow);
 		// instanciacion de la etiqueta
 		lbNumeros = new JLabel("0");
 		// cambio de la fuente del JLabel
@@ -35,6 +36,14 @@ public class PanelSuperior extends JPanel {
 		// add
 		add(lbNumeros,BorderLayout.PAGE_START);
 	}
+	/**
+	 * metodo que devuelve la etiqueta superior
+	 * @return
+	 */
+	public JLabel getLbNumeros() {
+		return lbNumeros;
+	}
+	
 }
 
 
