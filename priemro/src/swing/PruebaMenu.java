@@ -55,8 +55,9 @@ class VentanaMenu extends JFrame{
 		menu.add(elemento);
 		// annadir a la parte superior de la centana
 		JPanel aux = new JPanel();
-		aux.add(barra);
-		add(aux, BorderLayout.PAGE_START);
+		//aux.add(barra);
+		setJMenuBar(barra);
+		//add(aux, BorderLayout.PAGE_START);
 	}
 	private void prueba() {
 		JOptionPane.showMessageDialog(this, "has seleccionado una opcion en el menu", "menu", JOptionPane.INFORMATION_MESSAGE);
