@@ -62,7 +62,7 @@ public class Ej1Principal implements ActionListener {
 		}
 		else {
 			if(cbNegrita.isSelected()) {
-				lbTexto.setText("<html><h1><b>En un lugarde la mancha de cuyo nombre...</b></h1></html>");
+				lbTexto.setText("<html><i><b>En un lugarde la mancha de cuyo nombre...</b></i></html>");
 			}else {
 				lbTexto.setText("<html>En un lugarde la mancha de cuyo nombre...</html>");
 			}
