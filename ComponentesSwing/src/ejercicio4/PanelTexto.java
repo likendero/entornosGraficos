@@ -1,4 +1,4 @@
-package ejercicio3;
+package ejercicio4;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
