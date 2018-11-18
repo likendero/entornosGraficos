@@ -1,0 +1,13 @@
+Tarea de: Javier Gonzalez Rives 
+el programa lo he estructurado con el sistema vista controlador,
+para ello existen 3 paquetes 
+1º interfaz con las clases para la interfaz
+2º control con los elementos para la logica del programa(dentro de este hay
+sub divisiones en controles menores)
+3º main donde se juntan todos los elementos del programa
+
+Como compoenentes no usados he cogido los Sliders para que en la ventana 
+principal se pueda elegier el color de fondo con la combinacion de colores
+que dan en rgb
+gracias 
+
