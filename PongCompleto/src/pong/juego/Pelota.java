@@ -72,6 +72,6 @@ public class Pelota {
     public void dibujarPelota(Graphics2D g2d){
         // color azul
         g2d.setColor(new Color(229, 2, 212));
-        
+        g2d.fillOval(x, y, CUADRADO, CUADRADO);
     }
 }
