@@ -13,7 +13,7 @@ import java.awt.Graphics2D;
  * del juego y aporta los parametros de accion y dibujado
  * @author Javier Gonzalez Rives
  */
-public class Pelota {
+public class Pelota  {
     private Juego juego;
     private int x,y,dx,dy;
     private final int CUADRADO = 60;
@@ -50,8 +50,8 @@ public class Pelota {
      * a la que se mueve la bola
      */
     private void direccionAletatoria(){
-        this.dy = (int)(Math.random()*(-1-1)+1);
-        this.dx = (int)(Math.random()*(-1-1)+1);
+        this.dy = 1 ;//(int)(Math.random()*(-1-1)+1);
+        this.dx = 1 ; //(int)(Math.random()*(-1-1)+1);
     }
     /**
      * metodo que cambia la posicion de la vola y controla su posicion
@@ -67,7 +67,9 @@ public class Pelota {
             // cambio de sentido vertical
             dy = -dy;
         }
-        // 
+        // cambio en la posicion
+        x += dx;
+        y += dy;
     }
     public void dibujarPelota(Graphics2D g2d){
         // color azul

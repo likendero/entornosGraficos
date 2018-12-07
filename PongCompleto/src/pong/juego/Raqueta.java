@@ -5,7 +5,6 @@
  */
 package pong.juego;
 
-import com.sun.prism.Graphics;
 import java.awt.Color;
 import java.awt.Graphics2D;
 
@@ -24,7 +23,7 @@ public class Raqueta {
         super();
         this.juego = juego;
         // definicion de desplazamiento
-        this.dx = 1;
+        this.dx = 0;
         // definicion de la posicion (inicial)
         this.x = (juego.getWIDTH2()/2)-(ANCHO/2);
         // definicion de la altura
@@ -37,7 +36,7 @@ public class Raqueta {
         // cambio de color
         g2d.setColor(new Color(255,196,85));
         // dibujar rectangulo
-        g2d.drawRect(x, y, ANCHO, ALTO);
+        g2d.fillRect(x, y, ANCHO, ALTO);
     }
     /**
      * metodo que mueve hacia la derecha la raqueta
@@ -45,7 +44,7 @@ public class Raqueta {
     public void moverDerecha(){
         // control de la posicion
         if(x + dx <= juego.getWIDTH2()-ANCHO){
-            x += dx;
+            dx = 1;
         }
     }
     /**
@@ -53,9 +52,23 @@ public class Raqueta {
      */
     public void moverIzquierda(){
         // control de la posicion
-        if(x - dx <= 0 + ANCHO){
-            x += dx;
+        if(x - dx >= 0 + ANCHO){
+            dx = -1;
         }
         
+    }
+    /**
+     * metodo para detener el movimiento de la raqueta
+     *
+     */
+    public void noMover(){
+        dx = 0;
+    }
+    /**
+     * metodo que realiza movimiento de la 
+     * raqueta
+     */
+    public void movimientoRaqueta(){
+        x += dx;
     }
 }
