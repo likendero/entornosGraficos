@@ -8,6 +8,7 @@ import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,8 +19,12 @@ public class Juego extends Canvas implements Runnable, KeyListener {
     private Pelota pelota;
     private Raqueta raqueta;
     private boolean control;
+    private boolean derrota;
     private Image img;
     private Graphics gAux;
+    private int velocidad;
+    private long tiempoInicial;
+    private int dificultad;
     /**
      * metodo constructor del lienzo de juego
      */
@@ -28,8 +33,12 @@ public class Juego extends Canvas implements Runnable, KeyListener {
         this.pelota = new Pelota(this);
         this.raqueta = new Raqueta(this);
         this.control = true;
+        this.derrota = false;
+        this.velocidad = 10;
+        this.dificultad = 0;
         this.setPreferredSize(new Dimension(WIDTH2,HEIGHT2));
         setFocusable(true);
+        
     }
 
     @Override
@@ -70,18 +79,29 @@ public class Juego extends Canvas implements Runnable, KeyListener {
     // otros metodos
     @Override
     public void run() {
+        this.tiempoInicial = System.currentTimeMillis();
         // bucle del juego
         while(control){
             pelota.movimiento();
             raqueta.movimientoRaqueta();
+            pelota.colision(raqueta.recangulo());
             //System.out.println("hola");
             repaint();
-            
+            long tiempoFinal = (System.currentTimeMillis()-tiempoInicial);
+            // en el caso que el tiempo de juego sea divisor de 10
+            // se aumentara la velocidad
+            if(tiempoFinal % 10000 == 0 && velocidad > 0){
+                velocidad--;
+                dificultad++;
+            }
             try{
-                Thread.sleep(10);
+                
+                Thread.sleep(velocidad);
             }catch(InterruptedException in){
             }
+            
         }
+        
     }
 
     @Override
@@ -91,23 +111,51 @@ public class Juego extends Canvas implements Runnable, KeyListener {
     @Override
     public void keyPressed(KeyEvent e) {
         // caso de pulsar la tecla derecha
-        if(e.getKeyCode()== KeyEvent.VK_L){
+        if(e.getKeyCode()== KeyEvent.VK_RIGHT){
             // desplazamiento a la derecha de la paleta
             raqueta.moverDerecha();
-            System.out.println("derecha");
+            //System.out.println("derecha");
         }
         // caso de pulsar la flecha izquierda
-        if(e.getKeyCode() == KeyEvent.VK_K){
+        if(e.getKeyCode()== KeyEvent.VK_LEFT){
             // desplazamiento a la izquierda
             raqueta.moverIzquierda();
-            System.out.println("izquierda");
+            //System.out.println("izquierda");
         }
-        System.out.println("teclas");
+        //System.out.println("teclas" + e.getKeyChar()  +" " + KeyEvent.VK_RIGHT);
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
         raqueta.noMover();
+    }
+    // getters setters
+    public boolean isControl() {
+        return control;
+    }
+
+    public void setControl(boolean control) {
+        this.control = control;
+    }
+
+    public boolean isDerrota() {
+        return derrota;
+    }
+
+    public void setDerrota(boolean derrota) {
+        this.derrota = derrota;
+    }
+
+    public Pelota getPelota() {
+        return pelota;
+    }
+
+    public int getDificultad() {
+        return dificultad;
+    }
+
+    public void setDificultad(int dificultad) {
+        this.dificultad = dificultad;
     }
     
 }

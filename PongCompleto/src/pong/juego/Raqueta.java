@@ -7,6 +7,7 @@ package pong.juego;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.Rectangle;
 
 /**
  *
@@ -45,6 +46,8 @@ public class Raqueta {
         // control de la posicion
         if(x + dx <= juego.getWIDTH2()-ANCHO){
             dx = 1;
+        }else{
+            dx = 0;
         }
     }
     /**
@@ -52,8 +55,10 @@ public class Raqueta {
      */
     public void moverIzquierda(){
         // control de la posicion
-        if(x - dx >= 0 + ANCHO){
+        if(x - dx >= 0){
             dx = -1;
+        }else{
+            dx = 0;
         }
         
     }
@@ -70,5 +75,13 @@ public class Raqueta {
      */
     public void movimientoRaqueta(){
         x += dx;
+    }
+    /**
+     * metodo que genera la caja de impacto de la raqueta
+     * @return 
+     */
+    public Rectangle recangulo(){
+        Rectangle rec = new Rectangle(x,y,ANCHO, ALTO);
+        return rec;
     }
 }
