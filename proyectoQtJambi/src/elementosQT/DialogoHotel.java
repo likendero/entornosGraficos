@@ -54,6 +54,7 @@ public class DialogoHotel implements com.trolltech.qt.QUiForm<QDialog>
 
     public DialogoHotel() { super(); }
 
+    @Override
     public void setupUi(QDialog DialogoHotel)
     {
         DialogoHotel.setObjectName("DialogoHotel");

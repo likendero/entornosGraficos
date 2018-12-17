@@ -1,0 +1,6 @@
+podria ser que en windows diese ciertos problemas ya 
+que la he hecho desde linux aunque en un principio no 
+deberia darlos, dejo unas capturas para dejar constancia de 
+la ejecucion.
+- no he conseguido limitar la entrada en los numeros del 
+  numero de telefono
