@@ -33,13 +33,35 @@ public class ventanaPrueba extends javax.swing.JFrame {
         textArea1 = new java.awt.TextArea();
         beanRadioButton1 = new caso2beans.BeanRadioButton();
         btRojo = new javax.swing.JButton();
+        btHabilitar = new javax.swing.JButton();
+        beanRadioButton2 = new caso2beans.BeanRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        beanRadioButton1.setText("banana");
+        beanRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                beanRadioButton1ActionPerformed(evt);
+            }
+        });
 
         btRojo.setText("boton rojo");
         btRojo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btRojoActionPerformed(evt);
+            }
+        });
+
+        btHabilitar.setText("habilitar");
+        btHabilitar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btHabilitarActionPerformed(evt);
+            }
+        });
+
+        beanRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                beanRadioButton2ActionPerformed(evt);
             }
         });
 
@@ -50,9 +72,14 @@ public class ventanaPrueba extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(53, 53, 53)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btHabilitar)
                     .addComponent(btRojo)
                     .addComponent(beanRadioButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(183, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(beanRadioButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(123, 123, 123))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -61,7 +88,11 @@ public class ventanaPrueba extends javax.swing.JFrame {
                 .addComponent(beanRadioButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btRojo)
-                .addContainerGap(216, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btHabilitar)
+                .addGap(31, 31, 31)
+                .addComponent(beanRadioButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(134, Short.MAX_VALUE))
         );
 
         pack();
@@ -70,6 +101,19 @@ public class ventanaPrueba extends javax.swing.JFrame {
     private void btRojoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btRojoActionPerformed
         beanRadioButton1.setColor(Color.RED);
     }//GEN-LAST:event_btRojoActionPerformed
+
+    private void beanRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_beanRadioButton1ActionPerformed
+        beanRadioButton1.setColor(new Color(122,33,245));
+        beanRadioButton1.setEnabled(false);
+    }//GEN-LAST:event_beanRadioButton1ActionPerformed
+
+    private void btHabilitarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btHabilitarActionPerformed
+        beanRadioButton1.setEnabled(true);
+    }//GEN-LAST:event_btHabilitarActionPerformed
+
+    private void beanRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_beanRadioButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_beanRadioButton2ActionPerformed
     
     public void initComponent2(){
         beanRadioButton1.setTexto("hola que tal wate");
@@ -111,6 +155,8 @@ public class ventanaPrueba extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private caso2beans.BeanRadioButton beanRadioButton1;
+    private caso2beans.BeanRadioButton beanRadioButton2;
+    private javax.swing.JButton btHabilitar;
     private javax.swing.JButton btRojo;
     private java.awt.TextArea textArea1;
     // End of variables declaration//GEN-END:variables

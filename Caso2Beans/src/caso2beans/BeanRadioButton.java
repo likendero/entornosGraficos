@@ -8,6 +8,7 @@ package caso2beans;
 import java.awt.Color;
 import java.beans.*;
 import java.io.Serializable;
+import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 
 /**
@@ -35,6 +36,12 @@ public class BeanRadioButton extends JRadioButton implements Serializable {
         setHabilitado(habilitado);
         setInvisible(invisible);
         setSeleccionado(seleccionado);
+        
+        //Listener con clase anonima
+        this.addActionListener((java.awt.event.ActionEvent evt) -> {
+        System.out.println("Marcado");
+        JOptionPane.showMessageDialog(null, "Marcado");
+        });
     }
     // GETTERS SETTERS ////////////////////////////////////////////////////////
     public String getTexto() {
