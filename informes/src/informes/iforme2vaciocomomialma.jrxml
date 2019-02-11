@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2e5f3fe6-d669-491e-a159-f85326867341">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     automoviles.`Placa` AS automoviles_Placa,
+     automoviles.`Modelo` AS automoviles_Modelo,
+     automoviles.`Color` AS automoviles_Color,
+     automoviles.`Estado` AS automoviles_Estado
+FROM
+     `automoviles` automoviles]]>
+	</queryString>
+	<field name="automoviles_Placa" class="java.lang.Integer"/>
+	<field name="automoviles_Modelo" class="java.lang.Integer"/>
+	<field name="automoviles_Color" class="java.lang.String"/>
+	<field name="automoviles_Estado" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="579" height="43" uuid="8b7a24f4-6ec1-43cf-9fea-754cdb183628"/>
+				<textElement>
+					<font fontName="Comic Sans MS" size="30"/>
+				</textElement>
+				<text><![CDATA[HOLA AL MEGA INFORME DE LA VIDA]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="455" y="59" width="100" height="20" uuid="27a1f36e-6baf-453f-b6c1-503904bc22f5"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="41" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="2" width="100" height="20" uuid="3d82c272-a7a5-4379-9eb4-787f5e6316ab"/>
+				<textElement>
+					<font fontName="Comic Sans MS" size="14"/>
+				</textElement>
+				<text><![CDATA[PLACA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="123" y="2" width="100" height="20" uuid="b2127502-9931-4e58-aa70-8d83de684c20"/>
+				<textElement>
+					<font fontName="Comic Sans MS" size="14"/>
+				</textElement>
+				<text><![CDATA[MODELO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="238" y="2" width="100" height="20" uuid="9102ae24-a708-4dce-b3a1-6e6822183b18"/>
+				<textElement>
+					<font fontName="Comic Sans MS" size="14"/>
+				</textElement>
+				<text><![CDATA[COLOR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="349" y="0" width="133" height="20" uuid="d2a26fb8-988b-4d24-8479-149c37b3e1d1"/>
+				<textElement>
+					<font fontName="Comic Sans MS" size="14"/>
+				</textElement>
+				<text><![CDATA[DISPONIVILIDAD]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="28" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="29a5d19b-447b-4b1a-a06a-3d6fb3d1f18b"/>
+				<textElement>
+					<font fontName="Comic Sans MS" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{automoviles_Placa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="123" y="0" width="100" height="20" uuid="b2526ec0-767e-4efe-b6db-9b5568a0a457"/>
+				<textElement>
+					<font fontName="Comic Sans MS" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{automoviles_Modelo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="238" y="0" width="100" height="20" uuid="1afcc4dc-74e5-4cad-bc10-07c71d67a873"/>
+				<textElement>
+					<font fontName="Comic Sans MS" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{automoviles_Color}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="349" y="0" width="100" height="20" uuid="13666fec-4c9b-4cb2-b5ab-a06f4cb4278f"/>
+				<textElement>
+					<font fontName="Comic Sans MS" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{automoviles_Estado}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="425" y="33" width="80" height="20" uuid="6ac1553a-cbfd-49d6-8f05-9842cf74a33f"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="515" y="33" width="40" height="20" uuid="86f673d3-508a-4e15-9089-f2ccc97b1950"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>
