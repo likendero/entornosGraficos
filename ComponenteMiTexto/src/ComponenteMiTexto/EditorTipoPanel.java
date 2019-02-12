@@ -30,7 +30,7 @@ public class EditorTipoPanel extends javax.swing.JPanel {
         comobo = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
 
-        comobo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Texto", "Entero", " " }));
+        comobo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Texto", "Entero", "Real" }));
 
         jLabel1.setText("Tipo:");
 
@@ -39,7 +39,7 @@ public class EditorTipoPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
+                .addContainerGap(17, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(comobo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)

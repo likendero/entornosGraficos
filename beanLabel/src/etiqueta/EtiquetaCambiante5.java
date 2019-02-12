@@ -17,7 +17,7 @@ import javax.swing.JLabel;
  *
  * @author Javier Gonzalez Rives
  */
-public class EtiquetaCambiante4 extends JLabel implements Serializable, MouseListener {
+public class EtiquetaCambiante5 extends JLabel implements Serializable, MouseListener {
     
         private Color color;
 
@@ -88,7 +88,7 @@ public class EtiquetaCambiante4 extends JLabel implements Serializable, MouseLis
    
 
     
-    public EtiquetaCambiante4() {
+    public EtiquetaCambiante5() {
         this.setColor(Color.BLACK);
         this.addMouseListener(this);
     }
