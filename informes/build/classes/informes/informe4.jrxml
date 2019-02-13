@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d03af0a4-4567-4ed9-907d-a632984d0096">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="85"/>
+	<queryString>
+		<![CDATA[SELECT
+     automoviles.`Placa` AS automoviles_Placa,
+     automoviles.`Modelo` AS automoviles_Modelo,
+     automoviles.`Color` AS automoviles_Color,
+     automoviles.`Estado` AS automoviles_Estado,
+     autos_comprados.`Placa` AS autos_comprados_Placa,
+     autos_comprados.`Cliente` AS autos_comprados_Cliente,
+     autos_comprados.`FechaMatriculacion` AS autos_comprados_FechaMatriculacion,
+     factura.`Cliente` AS factura_Cliente,
+     factura.`Fecha` AS factura_Fecha,
+     clientes.`idCliente` AS clientes_idCliente,
+     clientes.`Nombre` AS clientes_Nombre,
+     clientes.`Cedula` AS clientes_Cedula,
+     clientes.`Numero_Tarjeta` AS clientes_Numero_Tarjeta
+FROM
+     `automoviles` automoviles INNER JOIN `autos_comprados` autos_comprados ON automoviles.`Placa` = autos_comprados.`Placa`
+     INNER JOIN `factura` factura ON autos_comprados.`Cliente` = factura.`Cliente`
+     INNER JOIN `clientes` clientes ON factura.`Cliente` = clientes.`idCliente`]]>
+	</queryString>
+	<field name="automoviles_Placa" class="java.lang.Integer"/>
+	<field name="automoviles_Modelo" class="java.lang.Integer"/>
+	<field name="automoviles_Color" class="java.lang.String"/>
+	<field name="automoviles_Estado" class="java.lang.String"/>
+	<field name="autos_comprados_Placa" class="java.lang.Integer"/>
+	<field name="autos_comprados_Cliente" class="java.lang.Integer"/>
+	<field name="autos_comprados_FechaMatriculacion" class="java.sql.Timestamp"/>
+	<field name="factura_Cliente" class="java.lang.Integer"/>
+	<field name="factura_Fecha" class="java.sql.Timestamp"/>
+	<field name="clientes_idCliente" class="java.lang.Integer"/>
+	<field name="clientes_Nombre" class="java.lang.String"/>
+	<field name="clientes_Cedula" class="java.lang.String"/>
+	<field name="clientes_Numero_Tarjeta" class="java.lang.String"/>
+	<variable name="autos_comprados_Cliente_1" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{autos_comprados_Cliente}]]></variableExpression>
+	</variable>
+	<variable name="autos_comprados_Placa_1" class="java.lang.Integer" resetType="Page" calculation="Count">
+		<variableExpression><![CDATA[$F{autos_comprados_Placa}]]></variableExpression>
+	</variable>
+	<variable name="prprp" class="java.lang.String"/>
+	<group name="nCliente">
+		<groupExpression><![CDATA[$F{factura_Cliente}]]></groupExpression>
+		<groupHeader>
+			<band height="37">
+				<textField>
+					<reportElement x="100" y="0" width="214" height="35" uuid="1ac5b1ee-cdeb-469d-a78b-481a448ba6a2"/>
+					<textElement>
+						<font fontName="Centaur" size="24"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{clientes_idCliente}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="0" width="100" height="20" uuid="65b80301-3970-4add-baab-027192a32388"/>
+					<text><![CDATA[cliente:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="314" y="0" width="232" height="35" uuid="1a0aa5ac-56df-41a9-aa4f-5ff4a37d03d3"/>
+					<textElement>
+						<font size="24"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{clientes_Nombre}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="65">
+				<staticText>
+					<reportElement x="0" y="0" width="138" height="20" uuid="b3c238ac-7231-4551-bf86-270d8985ded6"/>
+					<text><![CDATA[ Total de coches del cleinte]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="138" y="0" width="417" height="48" uuid="5c63ecd7-1be9-430f-93f6-fea8674d9097"/>
+					<textElement>
+						<font fontName="SansSerif" size="24"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{autos_comprados_Cliente_1}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="6" y="64" width="546" height="1" uuid="f86e3b88-b4d6-48f4-9bec-5681061ecc4a"/>
+				</line>
+				<textField>
+					<reportElement x="542" y="17" width="100" height="20" uuid="846c2b20-6373-45f4-a57d-0f3556063d25"/>
+					<textFieldExpression><![CDATA[$V{prprp}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="120" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="465" height="58" backcolor="#00CCCC" uuid="b1c19565-21c8-4aaa-838c-5f02c86adf2a"/>
+				<textElement>
+					<font fontName="Comic Sans MS" size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Coches adquiridos por un cliente]]></text>
+			</staticText>
+			<image>
+				<reportElement x="413" y="10" width="142" height="110" uuid="554e40a0-99ba-4503-bb04-c6d207d2494e"/>
+				<imageExpression><![CDATA["coche.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<textField pattern="yyyy.MM.dd G &apos;at&apos; HH:mm:ss z">
+				<reportElement x="215" y="0" width="340" height="35" uuid="7505480f-6ecd-4f64-8e98-5f88deedbe31"/>
+				<textElement>
+					<font fontName="Arial Narrow" size="24"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Page">
+				<reportElement x="0" y="0" width="100" height="20" uuid="edbbe772-967b-486c-b92d-a45e64df9fac"/>
+				<textFieldExpression><![CDATA[$V{autos_comprados_Placa_1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="23" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="138" height="20" uuid="ccc9bac6-cc13-4fde-88ce-55a12ac63ad3"/>
+				<text><![CDATA[automoviles_Placa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="138" y="0" width="138" height="20" uuid="ce815e09-c2d3-4c2a-a087-3cd7a52d2663"/>
+				<text><![CDATA[automoviles_Modelo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="276" y="0" width="138" height="20" uuid="a03636b3-7b0e-4049-b33b-cf24614a3699"/>
+				<text><![CDATA[automoviles_Color]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="414" y="0" width="138" height="20" uuid="90938fa2-8a48-4d00-ac63-700ad6f12d20"/>
+				<text><![CDATA[automoviles_Estado]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="138" height="20" uuid="7ad2c34b-0909-4ac0-a306-d43841b1647c"/>
+				<textFieldExpression><![CDATA[$F{automoviles_Placa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="138" y="0" width="138" height="20" uuid="8b68abc0-d355-4593-8bff-83efc8344af0"/>
+				<textFieldExpression><![CDATA[$F{automoviles_Modelo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="276" y="0" width="138" height="20" uuid="750ef0ae-1c5e-40df-8751-fe70c8cfffd5"/>
+				<textFieldExpression><![CDATA[$F{automoviles_Color}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="414" y="0" width="138" height="20" uuid="10d9e1ac-89a3-458f-8d53-5954a331eee7"/>
+				<textFieldExpression><![CDATA[$F{automoviles_Estado}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="12" width="546" height="1" uuid="0b3c8701-154c-46b3-ae3a-b05390f72f38"/>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="198" height="54" uuid="e8394574-dda4-4a1c-a27d-8fcb4134fc08"/>
+				<textElement textAlignment="Right">
+					<font size="24"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="215" y="0" width="99" height="54" uuid="a58951b4-b77b-4932-8e66-c0710f803e0f"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
