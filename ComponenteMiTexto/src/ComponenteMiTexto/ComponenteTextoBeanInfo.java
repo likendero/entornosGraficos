@@ -288,7 +288,7 @@ public class ComponenteTextoBeanInfo extends SimpleBeanInfo {
             properties[PROPERTY_size] = new PropertyDescriptor ( "size", ComponenteMiTexto.ComponenteTexto.class, "getSize", "setSize" ); // NOI18N
             properties[PROPERTY_text] = new PropertyDescriptor ( "text", ComponenteMiTexto.ComponenteTexto.class, "getText", "setText" ); // NOI18N
             properties[PROPERTY_tipo] = new PropertyDescriptor ( "tipo", ComponenteMiTexto.ComponenteTexto.class, "getTipo", "setTipo" ); // NOI18N
-            properties[PROPERTY_tipo].setPropertyEditorClass ( EditorTipoPanel.class );
+            properties[PROPERTY_tipo].setPropertyEditorClass ( TipoPropertyEditor.class );
             properties[PROPERTY_toolkit] = new PropertyDescriptor ( "toolkit", ComponenteMiTexto.ComponenteTexto.class, "getToolkit", null ); // NOI18N
             properties[PROPERTY_toolTipText] = new PropertyDescriptor ( "toolTipText", ComponenteMiTexto.ComponenteTexto.class, "getToolTipText", "setToolTipText" ); // NOI18N
             properties[PROPERTY_topLevelAncestor] = new PropertyDescriptor ( "topLevelAncestor", ComponenteMiTexto.ComponenteTexto.class, "getTopLevelAncestor", null ); // NOI18N

@@ -17,7 +17,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace pref="20" max="32767" attributes="0"/>
+              <EmptySpace pref="17" max="32767" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="comobo" min="-2" max="-2" attributes="0"/>
@@ -45,7 +45,7 @@
           <StringArray count="3">
             <StringItem index="0" value="Texto"/>
             <StringItem index="1" value="Entero"/>
-            <StringItem index="2" value=" "/>
+            <StringItem index="2" value="Real"/>
           </StringArray>
         </Property>
       </Properties>

@@ -54,7 +54,7 @@ super.setValue(value);
 //posible para la propiedad en la hoja de propiedades.
 @Override
 public String[] getTags() {
-String[] tags={"Entero", "Texto"};
+String[] tags={"Entero", "Texto","Real"};
 return tags;
 }
 //Cuando el usuario cambia el valor de Cadena , el constructor de bean le dice a
