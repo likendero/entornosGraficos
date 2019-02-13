@@ -9,11 +9,12 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.awt.event.WindowStateListener;
 import javax.swing.JButton;
+import javax.swing.JSpinner;
 import sun.awt.WindowClosingListener;
 
 /**
  *
- * @author windiurno
+ * @author Javier Gonzalez Rives
  */
 public class Informes extends javax.swing.JDialog implements WindowListener{
 
@@ -37,8 +38,10 @@ public class Informes extends javax.swing.JDialog implements WindowListener{
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
-        btInforme2 = new javax.swing.JButton();
         btImprimir = new javax.swing.JButton();
+        btInforme2 = new javax.swing.JButton();
+        btinforme3 = new javax.swing.JButton();
+        btInforme4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -49,9 +52,23 @@ public class Informes extends javax.swing.JDialog implements WindowListener{
             }
         });
 
-        btInforme2.setText("informe2");
-
         btImprimir.setText("imprimir");
+
+        btInforme2.setText("informe2");
+        btInforme2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btInforme2ActionPerformed(evt);
+            }
+        });
+
+        btinforme3.setText("informe3");
+        btinforme3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btinforme3ActionPerformed(evt);
+            }
+        });
+
+        btInforme4.setText("informe4");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -60,18 +77,28 @@ public class Informes extends javax.swing.JDialog implements WindowListener{
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addComponent(btInforme2)
-                    .addComponent(btImprimir))
-                .addContainerGap(313, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btinforme3))
+                    .addComponent(btImprimir)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btInforme2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btInforme4)))
+                .addContainerGap(220, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(btinforme3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btInforme2)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btInforme2)
+                    .addComponent(btInforme4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btImprimir)
                 .addContainerGap(186, Short.MAX_VALUE))
@@ -84,9 +111,19 @@ public class Informes extends javax.swing.JDialog implements WindowListener{
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void btInforme2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInforme2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btInforme2ActionPerformed
+
+    private void btinforme3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btinforme3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btinforme3ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btImprimir;
     private javax.swing.JButton btInforme2;
+    private javax.swing.JButton btInforme4;
+    private javax.swing.JButton btinforme3;
     private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 
@@ -145,5 +182,23 @@ public class Informes extends javax.swing.JDialog implements WindowListener{
     public void windowDeactivated(WindowEvent e) {
     }
 
+    public JButton getBtinforme3() {
+        return btinforme3;
+    }
 
+    public void setBtinforme3(JButton btinforme3) {
+        this.btinforme3 = btinforme3;
+    }
+
+    public JButton getBtInforme4() {
+        return btInforme4;
+    }
+
+    public void setBtInforme4(JButton btInforme4) {
+        this.btInforme4 = btInforme4;
+    }
+
+    
+    
+    
 }
