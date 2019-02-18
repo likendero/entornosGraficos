@@ -125,7 +125,7 @@ public class CtrlInformes implements ActionListener{
             String informe1 = "src/informes/informe4.jasper";
             // generacion en memoria
             try{
-                printer =   JasperFillManager.fillReport(informe1,null,con);
+                   printer =   JasperFillManager.fillReport(informe1,null,con);
                 viewer = new JasperViewer(printer);
                 //viewer.setVisible(true);
                 jasperDialog = new JDialog();
