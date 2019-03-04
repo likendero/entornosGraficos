@@ -42,6 +42,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         miInforme4 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         miAcerca = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        miAyuda = new javax.swing.JMenuItem();
 
         jMenuItem2.setText("jMenuItem2");
 
@@ -109,6 +111,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu3);
 
+        jMenu4.setText("ayuda");
+
+        miAyuda.setText("ayuda");
+        miAyuda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miAyudaActionPerformed(evt);
+            }
+        });
+        jMenu4.add(miAyuda);
+
+        jMenuBar1.add(jMenu4);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -151,6 +165,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_miInforme4ActionPerformed
 
+    private void miAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miAyudaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_miAyudaActionPerformed
+
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -158,9 +176,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem miAcerca;
+    private javax.swing.JMenuItem miAyuda;
     private javax.swing.JMenuItem miInforme1;
     private javax.swing.JMenuItem miInforme2;
     private javax.swing.JMenuItem miInforme3;
@@ -223,6 +243,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     public void setMiInforme4(JMenuItem miInforme4) {
         this.miInforme4 = miInforme4;
+    }
+
+    public JMenuItem getMiAyuda() {
+        return miAyuda;
+    }
+
+    public void setMiAyuda(JMenuItem miAyuda) {
+        this.miAyuda = miAyuda;
     }
     
 }
