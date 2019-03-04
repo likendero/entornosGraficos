@@ -64,11 +64,11 @@ public class Acciones implements ActionListener,WindowListener, KeyListener {
                 }
             }
             // caso de actualizar
-            if(e.getSource() == ven.getBtInsertar()){
+            if(e.getSource() == ven.getBtActulizar()){
                 // se comprueba que esten todos los campos correctos
                 if(comprobarCampos(patata)){
                     if(base.actualizar(patata)){
-                        JOptionPane.showMessageDialog(ven, "inserccion realizada");
+                        JOptionPane.showMessageDialog(ven,"actualizacion realizada");
                     }
                     
                 }
@@ -86,7 +86,12 @@ public class Acciones implements ActionListener,WindowListener, KeyListener {
             if(e.getSource() == ven.getBtBuscar()){
                 // comprobacion del id, debe ser mayor a 0
                 if(patata.getId() > 0){
-                    base.buscar(patata);
+                    patata = base.buscar(patata);
+                    if(patata != null){
+                        ven.getTxVariedad().setText(patata.getNombre());
+                        ven.getTxCalibre().setText(""+patata.getClaibre());
+                        ven.getTxPeso().setText(""+patata.getPeso());
+                    }
                 }else{
                      JOptionPane.showMessageDialog(ven, "para busquedas el id tiene que ser mayor que 0","ha sucedido un error",JOptionPane.ERROR_MESSAGE);
                 }

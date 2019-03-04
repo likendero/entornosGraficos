@@ -76,6 +76,7 @@ public class BasePatata extends Conexion {
             
         }catch(SQLException sql){
             JOptionPane.showMessageDialog(null, "no se ha podido realizar la inserccion");
+            sql.printStackTrace();
         }
         return false;
     }
@@ -106,10 +107,10 @@ public class BasePatata extends Conexion {
     public Patata buscar(Patata patata){
         
         int id = patata.getId();
-        
+        Patata patata2 = null;
         try{
             Connection con = this.getConnection();
-            PreparedStatement stat = con.prepareStatement("select from patatas where id = ?");
+            PreparedStatement stat = con.prepareStatement("select * from patatas where id = ?");
             stat.setInt(1, id);
             ResultSet resultado = stat.executeQuery();
             // en el caso que halla algun resultado
@@ -119,12 +120,13 @@ public class BasePatata extends Conexion {
                 int calibre = resultado.getInt(3);
                 double kg = resultado.getDouble(4);
                 // paso a la patata 
-                Patata patata2 = new Patata(id,variedad,calibre,kg);
+                patata2 = new Patata(id,variedad,calibre,kg);
             }
             con.close();
         }catch(SQLException sql){
             JOptionPane.showMessageDialog(null, "ha sucedido un error durante la consulta");
+            sql.printStackTrace();
         }
-        return patata;
+        return patata2;
     }
 }
