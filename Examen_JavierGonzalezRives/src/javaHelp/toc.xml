@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<toc version="1.0">
+   <tocitem text="Ventana principal" target="ventanap">
+      <tocitem text="Ventana vehiculo" target="ventanav"/>
+      <tocitem text="Ventana Productos" target="ventanapr"/>
+      <tocitem text="Acerca de" target="about"/>
+      <tocitem text="Creacion de informes" target="informe"/>
+   </tocitem>
+</toc>
